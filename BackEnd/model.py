@@ -55,14 +55,15 @@ def train_model():
     return model, scaler
 
 @anvil.server.callable
-def make_prediction():
+def make_prediction(wind):
     model, scaler = train_model()
-
-    scaled_data, _ = load_and_preprocess_data()
-    test_data = scaled_data[-60:]
-    X_test = np.reshape(test_data, (1, test_data.shape[0], 1))
-
-    predicted_res = model.predict(X_test)
+    predicted_res = model.predict(wind)
     predicted_res = scaler.inverse_transform(predicted_res)
 
     return predicted_res[0][0]
+
+@anvil.server.callable
+def predict_weather(location,preci,wind):
+  print(location,preci,wind)
+  if make_prediction(wind) > 50 or preci == "heavy_rain" or preci == "rain":
+      return True
