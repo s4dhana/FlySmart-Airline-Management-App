@@ -1,0 +1,5 @@
+"ID","name","start","destination","time","cancelled","seatsAvailable"
+"[851011,1397697956]","IC814","Goa","Delhi","2024-10-02A03:30:00.000000+0000",0,1
+"[851011,1397701582]","Sandy locals","Bangalore","Delhi","2024-10-09A10:00:00.000000+0000",1,4
+"[851011,1398640440]","Indigo","Delhi","Bangalore","2024-10-24A10:00:00.000000+0000",0,10
+"[851011,1398932236]","Air India","Bangalore","Jammu Kashmir","2024-10-11A01:00:00.000000+0000",1,2
