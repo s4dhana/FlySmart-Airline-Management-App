@@ -13,3 +13,9 @@ def update_flight_details(name):
 
     row2 = app_tables.myflights.get(name="sadhana")
     row2.update(flightName=name)
+
+@anvil.server.callable
+def cancelFlight(location):
+    rows = app_tables.flights.search(start=location)
+    for row in rows:
+      row.update(cancelled=True)
